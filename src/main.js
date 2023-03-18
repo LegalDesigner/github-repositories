@@ -1,17 +1,11 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import Home from './views/my-home.vue';
-import Repositories from './views/my-repositories.vue';
-import VueRouter from 'vue-router'
+import router from './router'
 
-const routes = [
-  { path: '/', component: Home },
-  { path: '/repositories', component: Repositories }
-];
+import './assets/main.css'
 
-const router = new VueRouter({
-  routes
-});
+const app = createApp(App)
 
-createApp(App).use(router).mount('#app');
+app.use(router)
 
+app.mount('#app')
